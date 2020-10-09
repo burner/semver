@@ -1,4 +1,4 @@
-Semantic Versioning 2.0.0
+Semantic Versioning for the D Programming Language
 ==============================
 
 Summary
@@ -67,8 +67,7 @@ Each element MUST increase numerically. For instance: 1.9.0 -> 1.10.0 -> 1.11.0.
 1. Once a versioned package has been released, the contents of that version
 MUST NOT be modified. Any modifications MUST be released as a new version.
 
-1. Major version zero (0.y.z) is for initial development. Anything MAY change
-at any time. The public API SHOULD NOT be considered stable.
+1. Major version zero (1.0.0) is for initial development
 
 1. Version 1.0.0 defines the public API. The way in which the version number
 is incremented after this release is dependent on this public API and how it
@@ -246,32 +245,14 @@ them.
 FAQ
 ---
 
-### How should I deal with revisions in the 0.y.z initial development phase?
-
-The simplest thing to do is start your initial development release at 0.1.0
-and then increment the minor version for each subsequent release.
-
 ### How do I know when to release 1.0.0?
 
-If your software is being used in production, it should probably already be
-1.0.0. If you have a stable API on which users have come to depend, you should
-be 1.0.0. If you're worrying a lot about backwards compatibility, you should
-probably already be 1.0.0.
-
-### Doesn't this discourage rapid development and fast iteration?
-
-Major version zero is all about rapid development. If you're changing the API
-every day you should either still be in version 0.y.z or on a separate
-development branch working on the next major version.
+It is version 1.0.0 when you release it.
 
 ### If even the tiniest backwards incompatible changes to the public API require a major version bump, won't I end up at version 42.0.0 very rapidly?
 
-This is a question of responsible development and foresight. Incompatible
-changes should not be introduced lightly to software that has a lot of
-dependent code. The cost that must be incurred to upgrade can be significant.
-Having to bump major versions to release incompatible changes means you'll
-think through the impact of your changes, and evaluate the cost/benefit ratio
-involved.
+So what, it is just a number.
+One you shouldn't really care about anyway.
 
 ### Documenting the entire public API is too much work!
 
@@ -290,6 +271,10 @@ restores backwards compatibility. Even under this circumstance, it is
 unacceptable to modify versioned releases. If it's appropriate,
 document the offending version and inform your users of the problem so that
 they are aware of the offending version.
+
+### I'm lazy, and I can't compare the public api by hand
+
+Write a tool that computes your next SemVer.
 
 ### What should I do if I update my own dependencies without changing the public API?
 
